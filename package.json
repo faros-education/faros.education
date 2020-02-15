@@ -4,7 +4,8 @@
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "start": "sirv public"
+    "start": "sirv public",
+    "clean-gh-pages": "rimraf README.md src public package.json package-lock.json rollup.config.js"
   },
   "gh-pages-deploy": {
     "staticpath": "public",
@@ -12,7 +13,10 @@
     "prep": [
       "build"
     ],
-    "commit": "deploy(): deploy main website"
+    "commit": "deploy(): deploy main website",
+    "post": [
+      "clean-gh-pages"
+    ]
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
