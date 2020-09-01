@@ -1,5 +1,17 @@
 @charset "utf-8";
 
-@import "~bulma/bulma";
+$navy: #171A3A;
+$teal: #508991;
+$turquoise: #75DDDD;
+$darkgreen: #004346;
+$lightgreen: #09BC8A;
 
-$primary: #171A3A
+$primary: $navy;
+$accent-one: $lightgreen;
+$accent-two: $turquoise;
+
+.is-teal{
+  background-color: $teal;
+}
+
+@import "~bulma/bulma";

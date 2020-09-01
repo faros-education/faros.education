@@ -58,24 +58,28 @@
 		display: block;
 		bottom: -1px;
 	}
+	*/
 
 	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
 		display: block;
+		color: white!important;
 	}
-	*/
+
 
 
 </style>
 
-<nav class="navbar is-primary is-fixed-top " role="navigation" aria-label="main navigation">
+<nav class="navbar is-dark is-primary is-fixed-top " role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
-		<div class="navbar-item">
+		<a class="navbar-item" style="font-weight: bold;" aria-current="{segment === undefined ? 'page' : undefined}" href=".">
 			FAROS-EDUCATION
-		</div>
-
+		</a>
 	</div>
 
+	<div class="navbar-end">
+		<a class="navbar-item" aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a>
+	</div>
 
 </nav>

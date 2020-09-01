@@ -1,7 +1,17 @@
+<script>
+	import { fly } from 'svelte/transition';
+</script>
+
 <svelte:head>
 	<title>About</title>
 </svelte:head>
 
-<h1>About this site</h1>
-
-<p>This is the 'about' page. There's not much here.</p>
+<section class="section hero is-medium is-primary is-bold" style="margin-top: 3.25rem">
+	<div class="hero-body">
+		 <div class="container">
+		 	<h1 class="title" in:fly="{{ y: -50, duration: 1000 }}">
+				About
+			</h1>
+		 </div>
+	 </div>
+</section>
