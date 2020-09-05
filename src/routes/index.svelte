@@ -2,6 +2,7 @@
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
 	import { FULLPAGE_JS_API_KEY } from '../data';
+	import ContactForm from '../components/ContactForm.svelte';
 	//import { fullpage, fullpage_api } from 'fullpage.js';
 
 
@@ -23,7 +24,7 @@
 			slidesNavigation: 'false',
 			easing: 'easeInQuart',
 			menu: 'myMenu',
-			anchors: ['heroAnchor', 'whatAnchor', 'cardsAnchor', 'adminsAnchor', 'studentsAnchor', 'itAnchor', 'techAnchor', 'contactAnchor'],
+			anchors: ['heroAnchor', 'cardsAnchor', 'adminsAnchor', 'studentsAnchor', 'itAnchor', 'contactAnchor'],
 			licenseKey: FULLPAGE_JS_API_KEY,
 		});
 
@@ -37,6 +38,7 @@
 </script>
 
 <style>
+/*
 	h1, figure, p {
 		text-align: center;
 		margin: 0 auto;
@@ -62,6 +64,11 @@
 	p {
 		margin: 1em auto;
 	}
+*/
+
+	#students {
+  	background-size: cover;
+	}
 
 	@media (min-width: 480px) {
 		h1 {
@@ -83,7 +90,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="what" class="section is-fullpage is-primary" data-anchor="what">
+	<!-- <section id="what" class="section is-fullpage is-primary" data-anchor="what">
 		<quote in:fly="{{ y: -50, duration: 1000 }}">
 			“75 percent of institutions are operating a system that is more than 10
 			years old… Today, for many institutions, the existing Student Information
@@ -91,9 +98,9 @@
 			Eduventures Research [2]
 		</quote >
 		<p in:fly="{{ y: -50, duration: 1000 }}">What can an upgrade do for me?</p>
-		<!-- <img src="img/student-collaboration.jpg" alt="Photo by Christina Morillo from Pexels"> -->
+		<img src="img/student-collaboration.jpg" alt="Photo by Christina Morillo from Pexels">
 
-	</section>
+	</section> -->
 	<section id="cards" class="section is-fullpage" data-anchor="cardsAnchor" style="background-color: #ececec;">
 		<div class="columns">
 			<div class="column">
@@ -113,7 +120,7 @@
 						</div>
 					</div>
 					<footer class="card-footer">
-						<a href="#" class="card-footer-item is-success">Learn More</a>
+						<a href="#adminsAnchor" class="card-footer-item is-success">Learn More</a>
 					</footer>
 				</div>
 			</div>
@@ -136,7 +143,7 @@
 						</div>
 					</div>
 					<footer class="card-footer">
-						<a href="#" class="card-footer-item is-success">Learn More</a>
+						<a href="#studentsAnchor" class="card-footer-item is-success">Learn More</a>
 					</footer>
 				</div>
 
@@ -158,65 +165,94 @@
 						</div>
 					</div>
 					<footer class="card-footer">
-						<a href="#" class="card-footer-item is-success">Learn More</a>
+						<a href="#itAnchor" class="card-footer-item is-success">Learn More</a>
 					</footer>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="administrators" class="hero section is-fullpage" data-anchor="adminsAnchor">
+	<section id="administrators" class="hero section is-fullpage" data-anchor="adminsAnchor" style="background-image:url('admins.jpg'); background-size: cover;">
 		<div class="hero-body">
 			<div class="container">
-				<h3 class="title is-4" in:fly="{{ y: -50, duration: 1000 }}">Faros is built for Administrators</h3>
-				<p class="subtitle" in:fly="{{ y: -50, duration: 1000 }}">
-					Increase retention. Know your future needs. Reduce overhead.
-				</p>
-				<p in:fly="{{ y: -50, duration: 1000 }}">
-					Faros will revolutionize Student Information Systems by bringing first
-					class data analtyics to administrators finger tips. Get a Modern ERP
-					designed with you in mind.
-				</p>
-				<div class="columns">
-					<div class="column" />
+				<div class="card" in:fly="{{ y: -50, duration: 1000 }}">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<h3 class="title is-4">Faros is built for Administrators</h3>
+							</div>
+						</div>
+						<div class="content">
+							<p class="subtitle">
+								Increase retention. Know your future needs. Reduce overhead.
+							</p>
+						</div>
+						<p>
+							Faros will revolutionize Student Information Systems by bringing first
+							class data analtyics to administrators finger tips. Get a Modern ERP
+							designed with you in mind.
+						</p>
+						<div class="columns">
+							<div class="column" />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="students" class="hero is-fullpage section " data-anchor='studentsAnchor'>
+	<section id="students" class="hero is-fullpage section " data-anchor='studentsAnchor' style="background-image:url('student.jpg'); background-size: cover;">
 		<div class="hero-body">
 			<div class="container">
-				<h3 class="title is-4" in:fly="{{ y: -50, duration: 1000 }}">Lead your Students to success</h3>
-				<p class="subtitle" in:fly="{{ y: -50, duration: 1000 }}">Designed with new students in mind</p>
-				<p in:fly="{{ y: -50, duration: 1000 }}">
-					Faros will help onboard students and walk them through the
-					registration process. The guided process will instruct them on what
-					they need to do, and help them understand the complexities of
-					registration.
-				</p>
+				<div class="card" in:fly="{{ y: -50, duration: 1000 }}">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<h3 class="title is-4">Lead your Students to success</h3>
+							</div>
+						</div>
+						<div class="content">
+							<p class="subtitle">Designed with new students in mind</p>
+							<p>
+								Faros will help onboard students and walk them through the
+								registration process. The guided process will instruct them on what
+								they need to do, and help them understand the complexities of
+								registration.
+							</p>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
 
-	<section id="it" class="hero is-fullpage section is-fullpage" data-anchor="itAnchor">
+	<section id="it" class="hero is-fullpage section is-fullpage" data-anchor="itAnchor" style="background-image:url('computer.jpg'); background-size: cover;">
 		<div class="hero-body">
 			<div class="container">
-				<h3 class="title is-4" in:fly="{{ y: -50, duration: 1000 }}">Simplify your IT</h3>
-				<p class="quote" in:fly="{{ y: -50, duration: 1000 }}">
-					"[Higher Education] institutions remain with their current ERP
-					suppliers for at least the next five years as there are no alternative
-					ERP cloud suppliers with viable student information systems" -Utah
-					System of Higher Education, Legislative brief
-				</p>
-
-				<ul>
-					<li in:fly="{{ y: -50, duration: 1000 }}">No maintenance downtimes</li>
-					<li in:fly="{{ y: -50, duration: 1000 }}">Fully customizable, using the latest frontend technologies</li>
-					<li in:fly="{{ y: -50, duration: 1000 }}">Scales Automatically during peak times</li>
-					<li in:fly="{{ y: -50, duration: 1000 }}">No maintenance fees, consultation fees, or other hidden fees</li>
-					<li in:fly="{{ y: -50, duration: 1000 }}">Public GraphQL API, making custom queries fast and easy</li>
-				</ul>
+				<div class="card" in:fly="{{ y: -50, duration: 1000 }}">
+					<div class="card-content">
+						<div class="media">
+							<div class="media-content">
+								<h3 class="title is-4">Simplify your IT</h3>
+							</div>
+						</div>
+						<div class="content">
+							<p class="quote">
+								"[Higher Education] institutions remain with their current ERP
+								suppliers for at least the next five years as there are no alternative
+								ERP cloud suppliers with viable student information systems" -Utah
+								System of Higher Education, Legislative brief
+							</p>
+						</div>
+						<ul>
+							<li >No maintenance downtimes</li>
+							<li >Fully customizable, using the latest frontend technologies</li>
+							<li >Scales Automatically during peak times</li>
+							<li >No maintenance fees, consultation fees, or other hidden fees</li>
+							<li >Public GraphQL API, making custom queries fast and easy</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -251,24 +287,16 @@
 			</div>
 		</div>
 	</section> -->
-	<section id="tech" class="hero section is-fullpage" section data-anchor="techAnchor">
-		<div class="hero-body">
-			<div class="container">
-				<h3 class="title is-4" in:fly="{{ y: -50, duration: 1000 }}">Tech Faros is built on</h3>
-			</div>
-		</div>
-	</section>
 
-	<section id="contact-us" class="hero section is-fullpage" data-anchor="contactAnchor">
-		<div class="hero-body">
-			<div class="container">
-				<h3 class="title is-4" in:fly="{{ y: -50, duration: 1000 }}">Ready to Migrate?</h3>
-				<p class="subtitle" in:fly="{{ y: -50, duration: 1000 }}">
-					Take advantage of our custom migration guides and transparent pricing
-				</p>
-				<button class="button is-primary is-large">Contact Us</button>
-
+	<section id="contact-us" class="section is-fullpage" style="background-color: #ececec;" data-anchor="contactAnchor">
+		<div class="container">
+			<div class="columns is-centered">
+				<div class="column is-6" in:fly="{{ y: -50, duration: 1000 }}">
+					<ContactForm />
+				</div>
 			</div>
+
 		</div>
+
 	</section>
 </div>
